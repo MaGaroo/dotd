@@ -4,6 +4,9 @@ from pathlib import Path
 import sys
 
 
+VERSION = "0.0.1"
+
+
 def main():
     args = parse_args(sys.argv)
 
@@ -32,7 +35,8 @@ def parse_args(args):
     )
     parser.add_argument("filename")
     parser.add_argument("-d", "--directory", action="store", type=str)
-    parser.add_argument("-r", "--recursive", action="store_true", type=bool)
+    parser.add_argument("-r", "--recursive", action="store_true")
+    parser.add_argument("--version", action="version", version=f"%(prog)s version {VERSION}")
     return parser.parse_args()
 
 
